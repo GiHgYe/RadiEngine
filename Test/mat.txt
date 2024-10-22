@@ -1,0 +1,17 @@
+material: {
+	shader: "shader",
+	texture: [
+		{
+			name: "texture",
+			image: "image"
+		},
+		{
+			name: "texture",
+			image: "image"
+		},
+		{
+			name: "texture",
+			image: "image"
+		}
+	]
+}
