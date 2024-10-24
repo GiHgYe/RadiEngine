@@ -67,6 +67,21 @@ void init_opengl()
     glfwSetFramebufferSizeCallback(window, [](GLFWwindow* windowint, int width, int height) { glViewport(0, 0, width, height); });
 }
 
+class A
+{
+public:
+    A() {}
+    ~A() {}
+
+    void print() { cout << "AAA...." << endl; }
+};
+
+template <class T>
+Reflection::ReflectionPtr<T> func()
+{
+    auto ptr = REFLECTION_NEW(T);
+    return ptr;
+}
 
 int main()
 {
@@ -74,7 +89,8 @@ int main()
     //init_opengl();
     //ConvertImageFile("C:\\Users\\asus\\Desktop\\RenderCode\\GIRnder\\models\\floor\\checker.png", "../checker.cpt");
     
-    
+    Reflection::TypeMetaRegister::metaRegister();
+
     Quaternion q = Quaternion::GetQuaternionFromEulerAngle({60, 70, 80});
 
     cout << q.GetPitch(false).ValueDegrees() << " " << q.GetYaw(false).ValueDegrees() << " " << q.GetRoll(false).ValueDegrees();

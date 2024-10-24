@@ -20,6 +20,7 @@ void MeshRenderer::SetMaterial(Material* material) {
     material_ = material;
 }
 
+
 void MeshRenderer::Render() 
 {
     Camera* current_camera = Camera::current_camera();

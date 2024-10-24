@@ -1,4 +1,6 @@
 #include <iostream>
+#include <glad.h>
+#include <glfw3.h>
 
 #include "engine.h"
 #include "login_scene.h"
@@ -29,7 +31,7 @@ int main()
     login_scene->AddComponent(Transform);
 
     Engine::Run();
-    
+
     Reflection::TypeMetaRegister::metaUnregister();
     return 0;
 }

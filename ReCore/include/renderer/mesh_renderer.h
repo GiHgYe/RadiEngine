@@ -17,7 +17,6 @@ public:
     void SetMaterial(Material* material);
     Material* material() { return material_; }
 
-    void SetMeshFilter(MeshFilter* mesh_filter);
 
     void Render();
 
