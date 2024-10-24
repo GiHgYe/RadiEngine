@@ -22,6 +22,15 @@ public:
 	/// \param farClip  远裁剪面
 	void SetProjection(float fovDegrees, float aspectRatio, float nearClip, float farClip);
 
+	/// 设置正交相机矩阵
+	/// \param left
+	/// \param right
+	/// \param bottom
+	/// \param top
+	/// \param z_near
+	/// \param z_far
+	void SetOrthographic(float left, float right, float bottom, float top, float z_near, float z_far);
+
 	Matrix4x4& view_mat4() { return view_mat4_; }
 	Matrix4x4& projection_mat4() { return projection_mat4_; }
 
@@ -57,6 +66,12 @@ public:
 
 	/// 按 depth_ 排序
 	static void Sort();
+
+	/// 相机投影类型
+	enum Projection {
+		Perspective,
+		Orthographic
+	};
 
 private:
 	Matrix4x4 view_mat4_;//指定相机坐标和朝向

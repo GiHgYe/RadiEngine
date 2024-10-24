@@ -87,6 +87,18 @@
     <ClCompile Include="src\log\log_system.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\renderer\font.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\ui_image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render_device\render_device.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render_device\render_device_opengl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\math\axis_aligned.h">
@@ -171,6 +183,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\log\log_system.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\renderer\font.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ui\ui_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\render_device\render_device.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\render_device\render_device_opengl.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -46,6 +46,7 @@ void Engine::InitOpengl()
     glfwSetMouseButtonCallback(glfw_window_, [](GLFWwindow* window, int button, int action, int mods) { Input::RecordKey(button, action); });
     glfwSetScrollCallback(glfw_window_, [](GLFWwindow* window, double x, double y) { Input::RecordScroll(y); });
     glfwSetCursorPosCallback(glfw_window_, [](GLFWwindow* window, double x, double y) { Input::set_mousePosition(x, y); });
+    UpdateScreenSize();
 }
 
 void Engine::LogicTick()
@@ -76,8 +77,8 @@ void Engine::Run()
 {
     while (!glfwWindowShouldClose(glfw_window_)) {
 
-        RenderTick();
         LogicTick();
+        RenderTick();
 
         glfwSwapBuffers(glfw_window_);
         glfwPollEvents();

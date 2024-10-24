@@ -66,3 +66,8 @@ void GameObject::Foreach(std::function<void(GameObject* game_object)> func)
 		func(game_object);
 	}
 }
+
+GameObject* GameObject::Find(std::string name)
+{
+	return nullptr;
+}

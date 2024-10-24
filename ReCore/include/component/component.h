@@ -15,6 +15,14 @@ public:
 
 	virtual void Awake() {}
 	virtual void Update() {}
+
+	/// 渲染之前
+	virtual void OnPreRender() {}
+	/// 渲染之后
+	virtual void OnPostRender() {}
+
+	virtual void OnEnable() {}
+	virtual void OnDisable() {}
 private:
 	GameObject* game_object_ = nullptr;
 };

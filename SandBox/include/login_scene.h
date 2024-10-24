@@ -4,6 +4,7 @@
 
 class Transform;
 class Camera;
+class Material;
 
 REFLECTION_TYPE(LoginScene)
 CLASS(LoginScene : public Component, WhiteListFields)
@@ -17,7 +18,17 @@ public:
 	void Update();
 
 private:
+
+    void CreateCube();
+
+    void CreateFont();
+
+    void CreateUI();
+
+private:
     Transform* transform_cube_{};
+    Material* material;
+
     Transform* transform_camera_1_{};
     Camera* camera_1_{};
     Transform* transform_camera_2_{};

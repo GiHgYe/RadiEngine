@@ -1,0 +1,9 @@
+material: {
+	shader: "../asset/shader/font",
+	texture: [
+		{
+			name: "u_diffuseMap0",
+			image: ""
+		}
+	]
+}

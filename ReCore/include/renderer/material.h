@@ -10,10 +10,8 @@
 class Shader;
 class Texture2D;
 
-REFLECTION_TYPE(Material)
-CLASS(Material : public Component, WhiteListFields)
+class Material
 {
-    REFLECTION_BODY(Material)
 public:
 	Material();
 	~Material();

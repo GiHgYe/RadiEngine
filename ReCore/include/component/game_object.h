@@ -65,18 +65,27 @@ public:
     /// \param func
     void ForeachComponent(std::function<void(Component* component)> func);
 
-    /// 遍历所有Camera
-    /// \param func
-    static void Foreach(std::function<void(GameObject* game_object)> func);
-
-#define AddComponent(COMPONENT_TYPE) AddComponentByName<COMPONENT_TYPE>(#COMPONENT_TYPE)
-#define GetComponent(COMPONENT_TYPE) GetComponentByName<COMPONENT_TYPE>(#COMPONENT_TYPE)
 
 private:
     std::string name_;
     std::unordered_map<std::string, std::vector<Component*>> component_type_instance_map_;
 
     unsigned char layer_;   //将物体分不同的层，用于相机分层、物理碰撞分层等
+    bool active_;//是否激活
 
+public:
+    /// 遍历所有GameObject
+    /// \param func
+    static void Foreach(std::function<void(GameObject* game_object)> func);
+
+    /// 全局查找GameObject
+    /// \param name
+    /// \return
+    static GameObject* Find(std::string name);
+
+private:
     static std::list<GameObject*> game_object_list_;    //存储所有的GameObject
+
+#define AddComponent(COMPONENT_TYPE) AddComponentByName<COMPONENT_TYPE>(#COMPONENT_TYPE)
+#define GetComponent(COMPONENT_TYPE) GetComponentByName<COMPONENT_TYPE>(#COMPONENT_TYPE)
 };

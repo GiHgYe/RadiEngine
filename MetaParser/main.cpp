@@ -18,6 +18,8 @@ int main() {
 			"../../Dependencies/lua/include;"
 			"../../Dependencies/mustache/include;"
 			"../../Dependencies/glad/include;"
+			"../../Dependencies/freetype/include;"
+			"../../Dependencies/spdlog/include;"
 		,
 		"*",
 		is_show_error

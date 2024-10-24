@@ -1,5 +1,6 @@
 #pragma once
 #include "meta/serializer/serializer.h"
+#include "serializer\camera.serializer.gen.h"
 #include "serializer\component.serializer.gen.h"
 #include "serializer\quaternion.serializer.gen.h"
 #include "serializer\matrix4.serializer.gen.h"
@@ -8,10 +9,28 @@
 #include "serializer\vector2.serializer.gen.h"
 #include "serializer\vector4.serializer.gen.h"
 #include "serializer\transform.serializer.gen.h"
-#include "serializer\material.serializer.gen.h"
 #include "serializer\mesh_filter.serializer.gen.h"
 #include "serializer\mesh_renderer.serializer.gen.h"
+#include "serializer\ui_image.serializer.gen.h"
+#include "serializer\login_scene.serializer.gen.h"
 
+template<>
+Json Serializer::Write(const Camera& instance){
+    Json::object  ret_context;
+    auto&&  json_context_0 = Serializer::Write(*(Component*)&instance);
+    assert(json_context_0.is_object());
+    auto&& json_context_map_0 = json_context_0.object_items();
+    ret_context.insert(json_context_map_0.begin() , json_context_map_0.end());
+    
+    return  Json(ret_context);
+}
+template<>
+Camera& Serializer::Read(const Json& json_context, Camera& instance){
+    assert(json_context.is_object());
+    Serializer::Read(json_context,*(Component*)&instance);
+
+    return instance;
+}
 template<>
 Json Serializer::Write(const Component& instance){
     Json::object  ret_context;
@@ -258,23 +277,6 @@ Transform& Serializer::Read(const Json& json_context, Transform& instance){
     return instance;
 }
 template<>
-Json Serializer::Write(const Material& instance){
-    Json::object  ret_context;
-    auto&&  json_context_0 = Serializer::Write(*(Component*)&instance);
-    assert(json_context_0.is_object());
-    auto&& json_context_map_0 = json_context_0.object_items();
-    ret_context.insert(json_context_map_0.begin() , json_context_map_0.end());
-    
-    return  Json(ret_context);
-}
-template<>
-Material& Serializer::Read(const Json& json_context, Material& instance){
-    assert(json_context.is_object());
-    Serializer::Read(json_context,*(Component*)&instance);
-
-    return instance;
-}
-template<>
 Json Serializer::Write(const MeshFilter& instance){
     Json::object  ret_context;
     auto&&  json_context_0 = Serializer::Write(*(Component*)&instance);
@@ -303,6 +305,40 @@ Json Serializer::Write(const MeshRenderer& instance){
 }
 template<>
 MeshRenderer& Serializer::Read(const Json& json_context, MeshRenderer& instance){
+    assert(json_context.is_object());
+    Serializer::Read(json_context,*(Component*)&instance);
+
+    return instance;
+}
+template<>
+Json Serializer::Write(const UIImage& instance){
+    Json::object  ret_context;
+    auto&&  json_context_0 = Serializer::Write(*(Component*)&instance);
+    assert(json_context_0.is_object());
+    auto&& json_context_map_0 = json_context_0.object_items();
+    ret_context.insert(json_context_map_0.begin() , json_context_map_0.end());
+    
+    return  Json(ret_context);
+}
+template<>
+UIImage& Serializer::Read(const Json& json_context, UIImage& instance){
+    assert(json_context.is_object());
+    Serializer::Read(json_context,*(Component*)&instance);
+
+    return instance;
+}
+template<>
+Json Serializer::Write(const LoginScene& instance){
+    Json::object  ret_context;
+    auto&&  json_context_0 = Serializer::Write(*(Component*)&instance);
+    assert(json_context_0.is_object());
+    auto&& json_context_map_0 = json_context_0.object_items();
+    ret_context.insert(json_context_map_0.begin() , json_context_map_0.end());
+    
+    return  Json(ret_context);
+}
+template<>
+LoginScene& Serializer::Read(const Json& json_context, LoginScene& instance){
     assert(json_context.is_object());
     Serializer::Read(json_context,*(Component*)&instance);
 

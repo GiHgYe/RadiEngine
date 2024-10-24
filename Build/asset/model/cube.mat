@@ -1,9 +1,0 @@
-material: {
-	shader: "../asset/model/unlit",
-	texture: [
-		{
-			name: "u_diffuseMap0",
-			image: "../asset/model/checker.cpt"
-		}
-	]
-}

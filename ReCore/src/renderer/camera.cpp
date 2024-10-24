@@ -37,6 +37,10 @@ void Camera::SetProjection(float fovDegrees, float aspectRatio, float nearClip, 
 	projection_mat4_ = Math::MakePerspectiveMatrix(Radian(Degree(fovDegrees)), aspectRatio, nearClip, farClip);
 }
 
+void Camera::SetOrthographic(float left, float right, float bottom, float top, float z_near, float z_far) {
+	projection_mat4_ = Math::MakeOrthographicProjectionMatrix(left, right, bottom, top, z_near, z_far);
+}
+
 void Camera::Clear() {
 	glClear(clear_flag_);
 	glClearColor(clear_color_.x, clear_color_.y, clear_color_.z, clear_color_.w);
