@@ -2,6 +2,7 @@
 #include <glad.h>
 #include <glfw3.h>
 
+#include <reflection/all_reflection.h>
 #include "engine.h"
 #include "login_scene.h"
 #include "renderer/texture2d.h"
@@ -15,7 +16,7 @@
 #include "component/transform.h"
 #include "control/key_code.h"
 #include "control/input.h"
-#include <reflection/all_reflection.h>
+#include "utils/debug.h"
 
 #pragma comment(lib, "yaml-cpp.lib")
 
@@ -24,6 +25,8 @@ using namespace std;
 int main()
 {
     Reflection::TypeMetaRegister::metaRegister();
+
+    LOG_DEBUG("Debug");
 
     Engine::InitOpengl();
     GameObject* login_scene = new GameObject("Login Scene Go");

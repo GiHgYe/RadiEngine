@@ -17,8 +17,8 @@ public:
 
 	//void ConnectUniformBlockAndBindingPoint();
 
-	//void Active();//激活
-	//void InActive();//禁用
+	void Active();//激活
+	void InActive();//禁用
 
 	unsigned int shader_program_handle() const { return shader_program_handle_; }//Shader程序句柄;
 

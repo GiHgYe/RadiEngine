@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\Dependencies\glad\include;..\Dependencies\GLFW\include;..\Dependencies\json11\include;..\Dependencies\lua\include;..\Dependencies\lua_socket\include;..\Dependencies\;..\ReCore\include;..\MetaGenerate;.\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Dependencies\spdlog\include;..\Dependencies\glad\include;..\Dependencies\GLFW\include;..\Dependencies\json11\include;..\Dependencies\lua\include;..\Dependencies\lua_socket\include;..\Dependencies\;..\ReCore\include;..\MetaGenerate;.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
