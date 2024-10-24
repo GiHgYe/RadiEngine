@@ -3,6 +3,8 @@
 
 std::list<GameObject*> GameObject::game_object_list_;
 
+}
+
 GameObject::GameObject(const std::string& name)
 	: layer_(0x01)
 {

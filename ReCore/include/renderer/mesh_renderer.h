@@ -19,10 +19,16 @@ public:
 
     void SetMeshFilter(MeshFilter* mesh_filter);
 
+    void SetView(Matrix4x4 view);
+    void SetProjection(Matrix4x4 projection);
+
     void Render();
 
 private:
     Material* material_{};
+
+    Matrix4x4 view_;
+    Matrix4x4 projection_;
 
     unsigned int vertex_buffer_object_ = 0;     //顶点缓冲区对象
     unsigned int element_buffer_object_ = 0;    //索引缓冲区对象

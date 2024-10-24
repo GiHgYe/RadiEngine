@@ -27,8 +27,10 @@ void MeshRenderer::Render()
 
     if ((current_camera->culling_mask() & game_object()->layer()) == 0x00) {
         return;
-    }
+}
 
+void MeshRenderer::Render() 
+{
     auto transform = game_object()->GetComponent(Transform);
     if (!transform) return;
 
